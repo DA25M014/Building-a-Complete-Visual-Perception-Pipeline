@@ -67,8 +67,8 @@ A **complete multi-task visual perception pipeline built from scratch** on the O
 ### 🚀 Usage
 
 ```bash
-# Classification
-python train.py --task classification --epochs 20 --lr 1e-3 --dropout 0.5
+# Classification (Example)
+python train.py --task classification --epochs 60 --lr 1e-3 --dropout 0.5
 
 # Localization
 python train.py --task localization --epochs 60 --lr 1e-4
