@@ -11,7 +11,7 @@
 |   |   |
 |---|---|
 | 📊 **W&B Report** | [View Report](https://api.wandb.ai/links/da25m014-iitm/ee73ad37) |
-| 💻 **GitHub Repo** | [View Code](https://github.com/DA25M014/DA6401_A2) |
+| 💻 **GitHub Repo** | [View Code](https://github.com/DA25M014/da6401_assignment_2) |
 
 ---
 
@@ -96,7 +96,7 @@ gdown
 
 **DA25M014** · M.Tech · IIT Madras
 
-[GitHub](https://github.com/DA25M014/DA6401_A2) · [W&B Report](https://api.wandb.ai/links/da25m014-iitm/ee73ad37)
+[GitHub](https://github.com/DA25M014/da6401_assignment_2) · [W&B Report](https://api.wandb.ai/links/da25m014-iitm/ee73ad37)
 
 ---
 
