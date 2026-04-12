@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+*.tar.gz
+data/oxford-iiit-pet/
+checkpoints/*.pth
+novel_images/
+wandb/
+.DS_Store
