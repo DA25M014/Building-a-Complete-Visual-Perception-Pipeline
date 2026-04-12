@@ -17,7 +17,7 @@
 
 ### 📌 About
 
-A **complete multi-task visual perception pipeline built from scratch** on the Oxford-IIIT Pet Dataset (37 breeds). VGG11 architecture with custom BatchNorm and Dropout — no pretrained weights, no pre-built models.
+A **complete multi-task visual perception pipeline built from scratch** on the Oxford-IIIT Pet Dataset (37 breeds). VGG11 architecture with custom BatchNorm and Dropout - no pretrained weights, no pre-built models.
 
 | Task | Model | Key Metric |
 |:---:|:---|:---|
