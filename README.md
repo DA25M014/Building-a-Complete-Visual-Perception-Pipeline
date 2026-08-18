@@ -1,4 +1,4 @@
-# DA6401 - Assignment 2
+# Building a Complete Visual Perception Pipeline
 
 ## VGG11 Visual Perception Pipeline
 
