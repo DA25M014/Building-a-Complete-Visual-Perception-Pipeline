@@ -22,8 +22,25 @@ A **complete multi-task visual perception pipeline built from scratch** on the O
 | Task | Model | Key Metric |
 |:---:|:---|:---|
 | Classification | VGG11 + FC Head | Macro F1 = 0.70 |
-| Localization | VGG11 + Regression Head | Acc@0.5 = 86%, Acc@0.75 = 60% |
+| Localization | VGG11 + Regression Head | Acc@0.5 = 57% (see correction below) |
 | Segmentation | VGG11 U-Net | Mean Dice = 0.84, PixAcc = 0.90 |
+
+> **Correction to the localization metric.** An earlier version of this README reported
+> `Acc@0.5 = 86%, Acc@0.75 = 60%` for localization. That figure was not measured on held-out
+> data and has been withdrawn.
+>
+> The cause: `data/pets_dataset.py` accepts a `split` argument but ignores it, always reading
+> `annotations/list.txt`, the full 7,349-image list. `train.py` then carves train and validation
+> out of that list with a random permutation, so within a single run train and validation are
+> disjoint and the classification and segmentation numbers below are unaffected. The localization
+> checkpoint, however, was trained before that change, when the dataset read the official
+> `trainval`/`test` split files. Scoring it against a split built the new way put **471 of the 544
+> evaluation images inside its own training pool**. It scored 0.9045 on those 471 and 0.5753 on
+> the 73 it had genuinely not seen, and a clean re-run logged `mt/acc@0.5 = 57.09%`.
+>
+> The 57% above is that clean re-run. `Acc@0.75` is not restated because no uncontaminated value
+> for it was recorded. Classification (macro F1 0.70) and segmentation (mean Dice 0.84) come from
+> the random-permutation validation split of 1,102 images and are unaffected.
 
 ---
 

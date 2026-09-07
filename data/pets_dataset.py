@@ -111,7 +111,12 @@ class OxfordIIITPetDataset(Dataset):
         self.trimap_dir = os.path.join(root, "annotations", "trimaps")
         self.xml_dir = os.path.join(root, "annotations", "xmls")
 
-        # Parse list file
+        # NOTE: `split` is accepted for API compatibility but is NOT used. This class always
+        # reads the full annotations/list.txt (7,349 images). Train/validation separation is
+        # done by the random permutation in train.py, not here. Reading the official
+        # trainval/test files instead would change every reported number, so the behaviour is
+        # left as it was when the results in README.md were produced. See the localization
+        # correction in README.md for why this matters.
         list_file = os.path.join(root, "annotations", "list.txt")
         self.samples = []  # (image_name, class_id_0indexed)
         with open(list_file, "r") as f:
